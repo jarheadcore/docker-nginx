@@ -14,7 +14,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # This one defines which config file is linked into sites.d (APP_FRAMEWORK.conf)
 ENV APP_FRAMEWORK=symfony
-ENV DOCUMENT_ROOT="app/web"
+ENV DOCUMENT_ROOT="/app/web"
 ENV RUNTIME_ENVIRONMENT=dev
 
 # Add labels
@@ -32,6 +32,9 @@ RUN chmod +x /usr/local/bin/webstartup.sh
 RUN rm /etc/localtime && \
     ln -s /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
 
+
+# pre-create the document root
+RUN mkdir -p ${DOCUMENT_ROOT}
 
 ENTRYPOINT ["/usr/local/bin/webstartup.sh"]
 CMD ["nginx", "-g", "daemon off;", "-c", "/data/conf/nginx/nginx.conf"]
