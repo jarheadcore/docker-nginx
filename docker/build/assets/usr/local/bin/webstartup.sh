@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #set -x
 
 if [[ -n ${RUNTIME_ENVIRONMENT} ]]; then
