@@ -13,9 +13,10 @@ ARG TIMEZONE=Europe/Zurich
 ENV DEBIAN_FRONTEND=noninteractive
 
 # This one defines which config file is linked into sites.d (APP_FRAMEWORK.conf)
-ENV APP_FRAMEWORK=symfony
+ENV APP_FRAMEWORK="symfony"
+ENV RUNTIME_ENVIRONMENT="local"
 ENV DOCUMENT_ROOT="/app/web"
-ENV RUNTIME_ENVIRONMENT=dev
+
 
 # Add labels
 LABEL io.web-solutions.git-branch=$GIT_BRANCH \
