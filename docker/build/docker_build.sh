@@ -112,6 +112,7 @@ if [[ -n ${DEF_BRANCH} ]]; then
     fi
   else
     echo -e "\nBuild failed."
+    exit 1
   fi
 
   if [ -d ${CODE_BASE} ]; then rm -rf ${CODE_BASE}; fi

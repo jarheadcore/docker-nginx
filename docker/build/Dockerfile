@@ -20,19 +20,17 @@ ENV DOCUMENT_ROOT="/app/web"
 
 # Add labels
 LABEL io.web-solutions.git-branch=$GIT_BRANCH \
-    io.web-solutions.git-commit=$GIT_COMMIT \
-    io.web-solutions.git-is-dirty=$GIT_DIRTY \
-    io.web-solutions.build-creator=$BUILD_CREATOR \
-    io.web-solutions.build-number=$BUILD_NUMBER
+      io.web-solutions.git-commit=$GIT_COMMIT \
+      io.web-solutions.git-is-dirty=$GIT_DIRTY \
+      io.web-solutions.build-creator=$BUILD_CREATOR \
+      io.web-solutions.build-number=$BUILD_NUMBER
 
 # COPY our config
 COPY ./assets/ /
 RUN chmod +x /usr/local/bin/webstartup.sh
 
 # Set time zone
-RUN rm /etc/localtime && \
-    ln -s /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
-
+RUN ln -fs /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
 
 # pre-create the document root
 RUN mkdir -p ${DOCUMENT_ROOT}
