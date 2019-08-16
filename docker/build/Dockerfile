@@ -34,6 +34,7 @@ RUN apk add --update --no-cache netcat-openbsd
 # COPY our config
 COPY ./assets/ /
 RUN chmod +x /usr/local/bin/webstartup.sh
+RUN chmod +x /usr/local/bin/wait-for.sh
 
 # Set time zone
 RUN ln -fs /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
