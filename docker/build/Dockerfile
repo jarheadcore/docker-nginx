@@ -17,6 +17,8 @@ ENV APP_FRAMEWORK="symfony"
 ENV RUNTIME_ENVIRONMENT="local"
 ENV DOCUMENT_ROOT="/app/web"
 
+# The host the script should "wait for" on startup by default - if empty, script does not wait
+ENV WAIT_FOR="fpm:9000"
 
 # Add labels
 LABEL io.web-solutions.git-branch=$GIT_BRANCH \
@@ -25,9 +27,14 @@ LABEL io.web-solutions.git-branch=$GIT_BRANCH \
       io.web-solutions.build-creator=$BUILD_CREATOR \
       io.web-solutions.build-number=$BUILD_NUMBER
 
+# install additional software
+# netcat (nc) for wait-for.sh script
+RUN apk add --update --no-cache netcat-openbsd
+
 # COPY our config
 COPY ./assets/ /
 RUN chmod +x /usr/local/bin/webstartup.sh
+RUN chmod +x /usr/local/bin/wait-for.sh
 
 # Set time zone
 RUN ln -fs /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
