@@ -1,10 +1,10 @@
 # IWF optimized docker image for Nginx
 
-The Master branch should not be used.
+The Master branch is empty and should not be used.
 
 See details in the README.md of following branches:
 
-- releases/NGINX-1.14
+- [releases/NGINX-1.14](https://github.com/iwf-web/docker-nginx/tree/releases/NGINX-1.14)
 
 New releases on the release branches should be tagged with internal version updates (changes to configuration).
 
