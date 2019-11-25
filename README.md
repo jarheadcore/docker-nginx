@@ -97,14 +97,14 @@ in the folder `/var/run/nginx-cache`.
 
 
 
-# Contribute!
+## Contribute!
 
 Contribute to this project and all the other's by creating issues & pull requests.
 
 Thanks for your help!
 
 
-# Get help
+## Get help
 
 Use the [issue system on Github](https://github.com/iwf-web/docker-nginx) to report errors or suggestions.
 
