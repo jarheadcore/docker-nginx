@@ -4,7 +4,7 @@
 DOCKER_NAME=iwfwebsolutions
 BUILD_NAME=nginx
 LATEST_TAG=1.14-latest
-GIT_REPO=git@git.iwf.io:docker/iwf-webserver.git
+GIT_REPO=https://github.com/iwf-web/docker-nginx.git
 CODE_BASE=./code
 DEF_PUSHDOCKERREGISTRY=0
 
