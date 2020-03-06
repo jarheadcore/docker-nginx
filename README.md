@@ -57,7 +57,7 @@ Currently you have 3 options:
 
 Environment variable  | default value  | Description
 ----------------------|----------------|---------------
-APP_FRAMEWORK         | symfony        | The configuration file to link:<br>`symfony` for Symfony 3 (app.php in `web`).<br>`symfony4` for Symfony 4 (index.php in `public`).<br>`craftcms` for CraftCMS 3/4,
+APP_FRAMEWORK         | symfony        | The configuration file to link:<br>`symfony` for Symfony 3 (app.php in `web`).<br>`symfony4` for Symfony 4 (index.php in `public`).<br>`craftcms` or `craftcms-nocache` for CraftCMS 3/4,
 RUNTIME_ENVIRONMENT   | local          | Needed for scripts, currently only for `30_adjust_robots-txt.sh` (see below). Options:<br>`local`, `dev`, `qa`, `prod`
 DOCUMENT_ROOT         | /app/web       | Directory where the webserver expects your static files to be mounted or copied into
 WAIT_FOR              | fpm:9000       | The webserver waits for the FPM container to be started and answer network calls on Port 9000. Disable with an empty string.
@@ -95,6 +95,13 @@ Folder      | Description
 The config file (`docker/build/assets/data/conf/nginx/framework-configs/craftcms.conf`) creates a hard disk cache for Craft pages
 in the folder `/var/run/nginx-cache`.
 
+ 
+If you want to use the caching configuration you have to set some parameters in your Craft's `general.php`.
+Also, your `cpTrigger` setting should be changed to `cmsadm` (instead of "admin").
+
+todo: List the required Craft config parameters
+
+When unsure use the configuration `craft-simplecache`. This one only implements some caching of resource files (e.g. images) and also understands the default `admin` cpTrigger.
 
 
 ## Contribute!

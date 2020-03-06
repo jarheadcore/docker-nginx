@@ -1,5 +1,8 @@
 # Changelog
 
+`1.14-16` (2020-03-06)
+- add 'craftcms-simplecache' configuration
+
 `1.14-15` (2019-12-17)
 - Fix build script
 
