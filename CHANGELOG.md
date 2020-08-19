@@ -1,5 +1,11 @@
 # Changelog
 
+`1.14-21` (2020-08-19)
+- add try_files for robots.txt location (craftcms only)
+
+`1.14-20` (2020-06-25)
+- populate real scheme for craftcms
+
 `1.14-18` (2020-03-06)
 - add 'craftcms-simplecache' configuration
 
