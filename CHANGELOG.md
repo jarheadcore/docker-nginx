@@ -1,5 +1,10 @@
 # Changelog
 
+`1.14-22` (2020-12-04)
+- add new variable UPSTREAM_HOST
+- replace startup routine to copy and substitute UPSTREAM_HOST variable
+- add variable UPSTREAM_HOST to all framework config files
+
 `1.14-21` (2020-08-19)
 - add try_files for robots.txt location (craftcms only)
 

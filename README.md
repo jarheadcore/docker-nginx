@@ -61,6 +61,7 @@ APP_FRAMEWORK         | symfony        | The configuration file to link:<br>`sym
 RUNTIME_ENVIRONMENT   | local          | Needed for scripts, currently only for `30_adjust_robots-txt.sh` (see below). Options:<br>`local`, `dev`, `qa`, `prod`
 DOCUMENT_ROOT         | /app/web       | Directory where the webserver expects your static files to be mounted or copied into
 WAIT_FOR              | fpm:9000       | The webserver waits for the FPM container to be started and answer network calls on Port 9000. Disable with an empty string.
+UPSTREAM_HOST         | fpm:9000       | The upstream host:port for nginx as proxy (nginx `server` directive)
 
 
 ## Default startup scripts
@@ -69,9 +70,9 @@ All the scripts in the container's `/data/dockerinit.d` folder are run on each s
 
 Script       |     Description
 -------------|--------------------
-00_link_config_files.sh   |  Links the `APP_FRAMEWORK`.conf file from `nginx/framework-configs` to `nginx/sites.d` where it's picked up by the default `nginx.conf`
-00_wait-for-deps.sh   | Waits for the `WAIT_FOR` server -- by default for the PHP FPM server
-30_adjust_robots-txt.sh  | Creates a "Disallow all" robots.txt file for all environments (defined by `RUNTIME_ENVIRONMENT`) NOT being `local` and `prod`. This prevents search engines to index your DEV/QA sites.
+00_enable_site.sh        |  Copies and resolves `UPSTREAM_SERVER` with the `APP_FRAMEWORK`.conf file from `nginx/framework-configs` to `nginx/sites.d` where it's picked up by the default `nginx.conf`
+00_wait-for-deps.sh      |  Waits for the `WAIT_FOR` server -- by default for the PHP FPM server
+30_adjust_robots-txt.sh  |  Creates a "Disallow all" robots.txt file for all environments (defined by `RUNTIME_ENVIRONMENT`) NOT being `local` and `prod`. This prevents search engines to index your DEV/QA sites.
 
 
 ## Extension points (change or extend configuration)

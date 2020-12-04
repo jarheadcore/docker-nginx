@@ -1,6 +1,6 @@
 FROM nginx:1.14-alpine
 
-MAINTAINER Jens Hassler <j.hassler@iwf.ch>
+MAINTAINER Jens Hassler <j.hassler@iwf.ch>, Michel Clément <m.clement@iwf.ch>
 
 # Argument variables
 ARG GIT_COMMIT
@@ -19,6 +19,8 @@ ENV DOCUMENT_ROOT="/app/web"
 
 # The host the script should "wait for" on startup by default - if empty, script does not wait
 ENV WAIT_FOR="fpm:9000"
+# The upstream host:port for nginx as proxy (nginx server directive)
+ENV UPSTREAM_SERVER="fpm:9000"
 
 # Add labels
 LABEL io.web-solutions.git-branch=$GIT_BRANCH \
