@@ -7,5 +7,5 @@ if [ "${RUNTIME_ENVIRONMENT}" != "prod" ] && [ "${RUNTIME_ENVIRONMENT}" != "loca
   echo "User-agent: *" >$ROBOTSTXT
   echo "Disallow: /" >>$ROBOTSTXT
 
-  echo "non-productive '$ROBOTSTXT' written to disallow all spiders."
+  echo "  non-productive '$ROBOTSTXT' written to disallow all spiders."
 fi
