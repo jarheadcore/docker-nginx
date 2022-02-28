@@ -17,19 +17,19 @@ See our [Symfony Vagrant Docker Example Project](https://github.com/iwf-web/symf
 
 ## Links
 
-The image is built weekly based on the official image `nginx:1.14-alpine`.
+The image is built weekly based on the official image `nginx:1.20-alpine`.
 
 It's available here: https://hub.docker.com/repository/docker/iwfwebsolutions/nginx
 
-You should always use the tag: `iwfwebsolutions/nginx:1.14-latest`
+You should always use the tag: `iwfwebsolutions/nginx:1.20-latest`
 
 
 ## Versions
 
-The X part of the version number `1.14-X` is always increased when we update the image configuration (e.g. config files).
+The X part of the version number `1.20-X` is always increased when we update the image configuration (e.g. config files).
 
 It is NOT an indication to the patch level of the base image. It's **always** the **latest** nginx image of the supplied version, 
-currently only `1.14`.
+currently only `1.20`.
 
 See the CHANGELOG to find out the details.
 
