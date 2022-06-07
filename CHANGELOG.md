@@ -1,5 +1,11 @@
 # Changelog
 
+`1.20.2` (2022-06-07)
+- default security headers
+
+`1.20.1` (2022-02-28)
+- new nginx version
+
 `1.14-22` (2020-12-04)
 - add new variable UPSTREAM_HOST
 - replace startup routine to copy and substitute UPSTREAM_HOST variable
