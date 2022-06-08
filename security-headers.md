@@ -5,16 +5,16 @@ The following security headers are activated through the file `/data/conf/nginx/
 
 If you want or need to overwrite one of the headers, mount your own security-headers config into that directory, with a name coming after `00-security-headers.conf` in the alphabet.
 
-| Header                     | Value                                    | Overwrite this, if...                                                                                                                                                                         |
-| -------------------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| X-Content-Type-Options     | nosniff                                  |                                                                                                                                                                                               |
-| X-Frame-Options            | deny                                     | you want to allow other users to integrate your site into an iFrame                                                                                                                           |
-| Referrer-Policy            | strict-origin-when-cross-origin          |                                                                                                                                                                                               |
-| Allow                      | "GET POST PUT DELETE" always             | you want to allow additional HTTP methods (e.g. HEAD, OPTIONS, PATCH, ...)                                                                                                                    |
-| Strict-Transport-Security  | "max-age=31536000; includeSubDomains"    |                                                                                                                                                                                               |
+
+| Header                    | Value                                   | Overwrite this, if...                                                                                                                                                                         |
+| --------------------------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| X-Content-Type-Options    | nosniff                                 |                                                                                                                                                                                               |
+| X-Frame-Options           | deny                                    | you want to allow other users to integrate your site into an iFrame                                                                                                                           |
+| Referrer-Policy           | strict-origin-when-cross-origin         |                                                                                                                                                                                               |
+| Allow                     | "GET POST PUT DELETE" always            | you want to allow additional HTTP methods (e.g. HEAD, OPTIONS, PATCH, ...)                                                                                                                    |
+| Strict-Transport-Security | "max-age=31536000; includeSubDomains"   |                                                                                                                                                                                               |
 | *Permissions-Policy*      | **NONE** -- please set this in your own | you want to allow special browser features like geolocation, camera or microphone accesss, ...<br />If you want to get good ratings on pen testing, set this on your own with a good default. |
 | *Content-Security-Policy* | **NONE** -- please set this in your own | you want to get better ratings in penetration tests.<br />This header can be quite tricky to configure.                                                                                       |
-
 
 Additionally:
 
@@ -48,7 +48,7 @@ If you want to allow your site to access e.g. the camera, you need to enable it 
 
 
 | Permission                | May be needed |
-| ------------------------- | ------------- |
+| --------------------------- | --------------- |
 | accelerometer             |               |
 | autoplay                  |               |
 | camera                    | x             |
@@ -75,7 +75,6 @@ If you want to allow your site to access e.g. the camera, you need to enable it 
 | hid                       |               |
 | interest-cohort           |               |
 | window-placement          |               |
-
 
 ## Content-Security-Policy
 
