@@ -1,9 +1,9 @@
 Security headers
 ================
 
-The following security headers are activated through the file `/data/conf/nginx/server-partials.d/00-security-headers.conf`.
+The following security headers are activated through the file `/data/conf/nginx/security-headers.d/00-security-headers.conf`.
 
-If you want or need to overwrite one of the headers, mount your own security-headers.conf into that directory, with a name coming after `00-security-headers` in the alphabet.
+If you want or need to overwrite one of the headers, mount your own security-headers config into that directory, with a name coming after `00-security-headers.conf` in the alphabet.
 
 | Header                     | Value                                    | Overwrite this, if...                                                                                                                                                                         |
 | -------------------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -24,7 +24,7 @@ Overwrite this one if you also need to change the "Allow" header.
 
 ## Extending and overriding
 
-Create a `01-site-headers.conf` and place it in `/data/conf/nginx/server-partials.d/01-site-headers.conf` (through Docker file mounting).
+Create a `01-site-headers.conf` and place it in `/data/conf/nginx/security-headers.d/01-site-headers.conf` (through Docker file mounting).
 
 Inside it you can enable site specific security headers, like a default Permissions-Policy and a default CSP:
 
