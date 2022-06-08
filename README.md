@@ -32,15 +32,15 @@ See the CHANGELOG to find out the details.
 
 ## Changes to the official base image
 
-| Change                          | Description                                                                                                                                                                                         |
-| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| assets                          | all the files in the `build/assets` folder are copied to the base image root                                                                                                                      |
+| Change                          | Description                                                                                                                                                                                   |
+| ------------------------------- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| assets                          | all the files in the `build/assets` folder are copied to the base image root                                                                                                                  |
 | framework specific config files | The config files in the folder `build/assets/data/conf/nginx/framework-configs` are linked into the folder `/data/conf/nginx/sites.d` on startup through the script `00_link_config_files.sh` |
-| timezone                        | The timezone in the Linux environment is changed to the `TIMEZONE` environment variable (default: Europe/Zurich)                                                                                  |
-| document root                   | The document root specified in the `DOCUMENT_ROOT` environment variable is pre-created                                                                                                            |
-| entrypoint                      | This is the script that runs when the image is started:`/usr/local/bin/webstartup.sh` - this starts all scripts in `dockerinit.d` folder                                                        |
-| command                         | This starts the webserver:`nginx -g "daemon off;" -c "/data/conf/nginx/nginx.conf"`                                                                                                               |
-| security headers                | Some security headers are automatically added,[described here](security-headers.md)                                                                                                                    |
+| timezone                        | The timezone in the Linux environment is changed to the `TIMEZONE` environment variable (default: Europe/Zurich)                                                                              |
+| document root                   | The document root specified in the `DOCUMENT_ROOT` environment variable is pre-created                                                                                                        |
+| entrypoint                      | This is the script that runs when the image is started:`/usr/local/bin/webstartup.sh` - this starts all scripts in `dockerinit.d` folder                                                      |
+| command                         | This starts the webserver:`nginx -g "daemon off;" -c "/data/conf/nginx/nginx.conf"`                                                                                                           |
+| security headers                | Some security headers are automatically added - [described here](security-headers.md)                                                                                                         |
 
 ## Usage / Environment variables
 
@@ -72,10 +72,11 @@ All the scripts in the container's `/data/dockerinit.d` folder are run on each s
 
 You can insert your own configuration at these points. Just mount your own config files into these directories or create a derived image from this one and change the files as needed.
 
-| Folder                             | Description                                                                           |
-| ---------------------------------- | ------------------------------------------------------------------------------------- |
-| /data/conf/nginx/http-partials.d   | `.conf` files here are included by the framework configs at the http (global) level |
-| /data/conf/nginx/server-partials.d | `.conf` files here are included by the framework configs at the server level        |
+| Folder                              | Description                                                                                                                                  |
+| ----------------------------------- |----------------------------------------------------------------------------------------------------------------------------------------------|
+| /data/conf/nginx/http-partials.d    | `.conf` files here are included by the framework configs at the http (global) level                                                          |
+| /data/conf/nginx/server-partials.d  | `.conf` files here are included by the framework configs at the server level                                                                 |
+| /data/conf/nginx/security-headers.d | `.conf` files here are included by the server and location configs to extend or override the applied [security headers](security-headers.md) |
 
 ## Framework specific
 
