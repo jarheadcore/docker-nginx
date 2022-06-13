@@ -1,5 +1,8 @@
 # Changelog
 
+`1.20.3` (2022-06-13)
+- special craftcms config for backend
+
 `1.20.2` (2022-06-07)
 - default security headers
 
