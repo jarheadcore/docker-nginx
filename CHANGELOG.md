@@ -1,12 +1,12 @@
 # Changelog
 
-`1.20.3` (2022-06-13)
+`1.20-3` (2022-06-13)
 - special craftcms config for backend
 
-`1.20.2` (2022-06-07)
+`1.20-2` (2022-06-07)
 - default security headers
 
-`1.20.1` (2022-02-28)
+`1.20-1` (2022-02-28)
 - new nginx version
 
 `1.14-22` (2020-12-04)
