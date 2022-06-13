@@ -28,7 +28,7 @@ Create a `01-site-headers.conf` and place it in `/data/conf/nginx/security-heade
 
 Inside it you can enable site specific security headers, like a default Permissions-Policy and a default CSP:
 
-You can also overwrite the default headers by specifying them again with a different value.
+If you want to override the default headers (00-security-headers.conf) you are maybe forced to overwrite the whole file because nginx `add_header` config has no duplication check. Two "add_header" with the same header will output the header two times.
 
 ## Permissions-Policy
 
@@ -42,39 +42,39 @@ Here is a list with permissions not throwing a message in Chrome 100 (currently)
 
 Default implementation for denying all these features:
 
-`add_header Permissions-Policy "accelerometer=(), autoplay=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), xr-spatial-tracking=(), clipboard-read=(), clipboard-write=(), hid=(), interest-cohort=(), window-placement=()";`
+`add_header Permissions-Policy "accelerometer=(), autoplay=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), xr-spatial-tracking=(), clipboard-read=(), clipboard-write=(), hid=(), window-placement=()";`
 
 If you want to allow your site to access e.g. the camera, you need to enable it with: `camera=(self)`
 
 
-| Permission                | May be needed |
-| --------------------------- | --------------- |
-| accelerometer             |               |
-| autoplay                  |               |
-| camera                    | x             |
-| cross-origin-isolated     |               |
-| display-capture           |               |
-| document-domain           |               |
-| encrypted-media           |               |
-| fullscreen                | x             |
-| geolocation               | x             |
-| gyroscope                 |               |
-| keyboard-map              |               |
-| magnetometer              |               |
-| microphone                | x             |
-| midi                      |               |
-| payment                   |               |
-| picture-in-picture        |               |
-| publickey-credentials-get |               |
-| screen-wake-lock          |               |
-| sync-xhr                  |               |
-| usb                       |               |
-| xr-spatial-tracking       |               |
-| clipboard-read            | x             |
-| clipboard-write           | x             |
-| hid                       |               |
-| interest-cohort           |               |
-| window-placement          |               |
+| Permission                | May be needed                 |
+| --------------------------- | ------------------------------- |
+| accelerometer             |                               |
+| autoplay                  |                               |
+| camera                    | x                             |
+| cross-origin-isolated     |                               |
+| display-capture           |                               |
+| document-domain           |                               |
+| encrypted-media           |                               |
+| fullscreen                | x                             |
+| geolocation               | x                             |
+| gyroscope                 |                               |
+| keyboard-map              |                               |
+| magnetometer              |                               |
+| microphone                | x                             |
+| midi                      |                               |
+| payment                   |                               |
+| picture-in-picture        |                               |
+| publickey-credentials-get |                               |
+| screen-wake-lock          |                               |
+| sync-xhr                  |                               |
+| usb                       |                               |
+| xr-spatial-tracking       |                               |
+| clipboard-read            | x                             |
+| clipboard-write           | x                             |
+| hid                       |                               |
+| ~~interest-cohort~~       | (not yet supported by Chrome) |
+| window-placement          |                               |
 
 ## Content-Security-Policy
 
