@@ -1,5 +1,8 @@
 # Changelog
 
+`1.20-4` (2022-06-28)
+- change header X-Frame-Options to SAMEORIGIN
+
 `1.20-3` (2022-06-13)
 - special craftcms config for backend
 
