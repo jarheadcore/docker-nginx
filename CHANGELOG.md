@@ -1,5 +1,8 @@
 # Changelog
 
+`1.20-5` (2022-08-18)
+- larger fast_cgi_buffer_size 
+
 `1.20-4` (2022-06-28)
 - change header X-Frame-Options to SAMEORIGIN
 
