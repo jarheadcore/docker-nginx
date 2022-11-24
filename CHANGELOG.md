@@ -1,5 +1,8 @@
 # Changelog
 
+`1.22-1` (2022-11-24)
+- new nginx version 1.22
+
 `1.20-5` (2022-08-18)
 - larger fast_cgi_buffer_size 
 

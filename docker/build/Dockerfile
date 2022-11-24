@@ -1,10 +1,10 @@
-FROM nginx:1.20-alpine
+FROM nginx:1.22-alpine
 
 MAINTAINER Jens Hassler <j.hassler@iwf.ch>
 
 # Argument variables
 ARG GIT_COMMIT
-ARG GIT_BRANCH=releases/nginx-1.20
+ARG GIT_BRANCH=releases/nginx-1.22
 ARG GIT_DIRTY=undefined
 ARG BUILD_CREATOR
 ARG BUILD_NUMBER
