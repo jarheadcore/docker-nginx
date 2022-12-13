@@ -1,0 +1,2 @@
+This directory should be mounted on the host system if you want to provide your own certificates.
+Put a "cert.pem" and a "key.pem" inside this directory.
