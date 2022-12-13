@@ -1,5 +1,8 @@
 # Changelog
 
+`1.22-3` (2022-12-13)
+- use -dsaparam option to speedup dhparam.pem generation
+
 `1.22-2` (2022-12-13)
 - add SSL support
 
