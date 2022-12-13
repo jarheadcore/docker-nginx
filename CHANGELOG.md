@@ -1,5 +1,8 @@
 # Changelog
 
+`1.22-2` (2022-12-13)
+- add SSL support
+
 `1.22-1` (2022-11-24)
 - new nginx version 1.22
 
