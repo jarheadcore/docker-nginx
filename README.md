@@ -11,7 +11,6 @@ This image contains configurations for Symfony3, Symfony4 and CraftCMS.
 
 It should be used together with our [PHP base image](https://hub.docker.com/repository/docker/iwfwebsolutions/phpfpm).
 
-See our [Symfony Vagrant Docker Example Project](https://github.com/iwf-web/symfony-vagrant-docker-example) for a usage example.
 
 ## Links
 
@@ -73,10 +72,17 @@ All the scripts in the container's `/data/dockerinit.d` folder are run on each s
 You can insert your own configuration at these points. Just mount your own config files into these directories or create a derived image from this one and change the files as needed.
 
 | Folder                              | Description                                                                                                                                  |
-| ----------------------------------- |----------------------------------------------------------------------------------------------------------------------------------------------|
+|-------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | /data/conf/nginx/http-partials.d    | `.conf` files here are included by the framework configs at the http (global) level                                                          |
 | /data/conf/nginx/server-partials.d  | `.conf` files here are included by the framework configs at the server level                                                                 |
 | /data/conf/nginx/security-headers.d | `.conf` files here are included by the server and location configs to extend or override the applied [security headers](security-headers.md) |
+| /data/conf/nginx/certificates       | You should mount this directory to a folder on your host system. See the SSL section for further details.                                    |
+
+## SSL support
+
+You can store your own SSL certificates in the folder `/data/conf/nginx/certificates`. The files should be named `cert.pem` and `key.pem`.
+If you don't supply your own files, this image will automatically generate a self signed SSL certificate inside this folder. 
+The diffie hellman parameter file (`dhparam.pem`) will be also created and stored in this folder if it doesn't exist.
 
 ## Framework specific
 
