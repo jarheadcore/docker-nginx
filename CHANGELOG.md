@@ -1,5 +1,8 @@
 # Changelog
 
+`1.22.5` (2022-12-23)
+- add new craftcms-blitz.conf
+
 `1.22-4` (2022-12-23)
 - updated some parameters in ssl.conf
 
